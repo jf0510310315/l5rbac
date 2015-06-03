@@ -70,12 +70,10 @@
                   </div>
 
                 <div class="">
-                    <div class="">
-                        <input name="_method" type="hidden" value="PUT">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
+                            <input name="_method" type="hidden" value="PUT">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <button type="submit" class="btn btn-primary">提交保存</button>
                         </div>
                       </div>

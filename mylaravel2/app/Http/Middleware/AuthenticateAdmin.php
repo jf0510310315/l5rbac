@@ -47,7 +47,7 @@ class AuthenticateAdmin {
                 );
             }
             else {
-                return redirect()->guest('admin/auth/login');
+                return redirect()->guest('auth/login');
             }
         }
 

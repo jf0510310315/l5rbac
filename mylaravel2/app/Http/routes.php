@@ -18,6 +18,7 @@ Route::get('home', 'HomeController@index');
 
 //权限控制路由
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
+    Route::get('/', ['as'=>'admin.home','uses'=>'HomeController@index']);
     //Rbac
     Route::group(['prefix'=>'rbac','namespace'=>'Rbac'],function(){
         Route::resource('role', 'RoleController');

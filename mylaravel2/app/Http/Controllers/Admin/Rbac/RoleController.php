@@ -58,7 +58,7 @@ class RoleController extends BaseController {
             'type' => $result ? 'success' : 'warning',
             'data' => $result ? ['新角色创建成功'] : ['角色创建失败'],
         ];
-        return redirect('admin/rbac/role/create')->with('am-alert', $alert);
+        return redirect('admin/rbac/role/create')->with('fdd-alert', $alert);
     }
 
     /**
@@ -144,7 +144,7 @@ class RoleController extends BaseController {
             'type' => $result ? 'success' : 'warning',
             'data' => $result ? ['角色权限保存成功'] : ['角色权限保存失败'],
         ];
-        return redirect(route('admin.rbac.role.permissions', ['id' => $id]))->with('am-alert', $alert);
+        return redirect(route('admin.rbac.role.permissions', ['id' => $id]))->with('fdd-alert', $alert);
     }
 
 }

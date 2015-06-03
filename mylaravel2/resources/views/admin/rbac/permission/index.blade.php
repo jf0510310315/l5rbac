@@ -18,7 +18,7 @@
                 <div class="am-u-sm-12 am-u-md-6">
                     <div class="am-btn-toolbar">
                         <div class="am-btn-group am-btn-group-xs">
-                            <a href="{{ route('admin.rbac.permission.create') }}" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</a>
+                            <a href="{{ route('admin.rbac.permission.create') }}" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> 新增</a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
             <div class="am-g">
                 <div class="am-u-sm-12">
                     <form class="am-form">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-hover">
                             <thead>
                             <tr>
                                 <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">标题</th><th class="table-type">类别</th><th class="table-author am-hide-sm-only">作者</th><th class="table-date am-hide-sm-only">修改日期</th><th class="table-set">操作</th>

@@ -6,27 +6,27 @@
     </div>
 </div>
 
-<div class="am-tabs am-margin" data-am-tabs>
-    <ul class="am-nav am-nav-tabs">
-        <li><a href="{{ route('admin.rbac.role.index') }}">角色组</a></li>
-        <li><a href="{{ route('admin.rbac.user.index') }}">用户</a></li>
-        <li><a href="{{ route('admin.rbac.permission.index') }}">权限</a></li>
-        <li class="am-active"><a href="{{ route('admin.rbac.user.create') }}">添加用户</a></li>
+<div class="row" >
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="{{ route('admin.rbac.role.index') }}">角色组</a></li>
+        <li role="presentation"><a href="{{ route('admin.rbac.user.index') }}">用户</a></li>
+        <li role="presentation"><a href="{{ route('admin.rbac.permission.index') }}">权限</a></li>
+        <li role="presentation" class="active"><a href="{{ route('admin.rbac.user.create') }}">添加用户</a></li>
     </ul>
 
-    <div class="am-tabs-bd">
-        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+    <div class="">
+        <div class="tab-panel fade in active" id="tab1">
 
             @include('admin.alert')
 
-            <form class="am-form" action="{{ route('admin.rbac.user.store') }}" method="POST">
+            <form class="form-horizontal" action="{{ route('admin.rbac.user.store') }}" method="POST">
                 @if($roles)
-                <div class="am-g am-margin-top">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
                         角色组
-                    </div>
-                    <div class="am-u-sm-8 am-u-md-4">
-                        <ul >
+                    </label>
+                    <div class="col-sm-8">
+                        <ul  type="square">
                             @foreach($roles as $role)
                             <li>
                                 <label class="am-checkbox-inline">
@@ -36,44 +36,42 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="am-hide-sm-only am-u-md-6"></div>
+                    <div class="col-sm-2"></div>
                 </div>
                 @endif
-                <div class="am-g am-margin-top">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        用户名
-                    </div>
-                    <div class="am-u-sm-8 am-u-md-4">
-                        <input type="text" class="am-input-sm" name="name" value="{{ old('name') }}">
-                    </div>
-                    <div class="am-hide-sm-only am-u-md-6">*必填，不可重复</div>
-                </div>
 
-                <div class="am-g am-margin-top">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        邮箱
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                     </div>
-                    <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
-                        <input type="text" class="am-input-sm" name="email" value="{{ old('email') }}">
-                    </div>
-                    <div class="am-hide-sm-only am-u-md-6">*必填，不可重复</div>
-                </div>
+                    <div class="col-sm-2">*必填，不可重复</div>
+                  </div>
 
-                <div class="am-g am-margin-top">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        密码
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                     </div>
-                    <div class="am-u-sm-8 am-u-md-4">
-                        <input type="password" class="am-input-sm" name="password" value="" placeholder="请输入密码">
-                    </div>
-                    <div class="am-hide-sm-only am-u-md-6">*必填</div>
-                </div>
+                    <div class="col-sm-2">*必填，不可重复</div>
+                  </div>
 
-                <div class="am-g am-margin-top">
-                    <div class="am-u-sm-8 am-u-md-4 am-u-sm-centered">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">密码</label>
+                    <div class="col-sm-8">
+                      <input type="password" class="form-control" name="password" value=""  placeholder="Password">
                     </div>
+                    <div class="col-sm-2">只修改密码时填写</div>
+                  </div>
+
+                <div class="">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                          <button type="submit" class="btn btn-primary">提交保存</button>
+                        </div>
+                      </div>
                 </div>
 
             </form>

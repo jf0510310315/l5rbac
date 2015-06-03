@@ -61,7 +61,7 @@ class UserController extends BaseController {
             'type' => $userId ? 'success' : 'warning',
             'data' => $userId ? ['新用户创建成功'] : ['用户创建失败'],
         ];
-        return redirect('admin/rbac/user/create')->with('am-alert', $alert);
+        return redirect('admin/rbac/user/create')->with('fdd-alert', $alert);
     }
 
     /**

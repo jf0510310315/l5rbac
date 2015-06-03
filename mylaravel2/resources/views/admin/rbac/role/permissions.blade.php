@@ -22,13 +22,13 @@
 
             <form class="form" action="" method="POST">
                 <div class="g margin-top">
-                    <h1>h1 标题1</h1>
+                    <h1>编辑权限组权限</h1>
                 </div>
 
-                <div class="g margin-top">
-                    <ul class="avg-sm-4">
+                <div class="panel panel-default">
+                    <ul class="col-sm-12">
                         @foreach($permissions as $permission)
-                        <li class="fl">
+                        <li class="col-sm-3">
                             <label class="checkbox-inline">
                                 @if(in_array($permission->name,$rolePerms))
                                 <input name="permissions[]" type="checkbox" value="{{ $permission->id }}"  checked > <strong  data-am-popover="{content: '{{ $permission->description }}', trigger: 'hover'}">{{ $permission->display_name }}</strong>
@@ -51,8 +51,7 @@
 
                 <div class="">
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                        <input name="_method" type="hidden" value="PUT">
+                        <div class="col-sm-offset-5 col-sm-2">
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <button type="submit" class="btn btn-primary">提交保存</button>
                         </div>

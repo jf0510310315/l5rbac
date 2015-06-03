@@ -53,7 +53,7 @@ class PermissionController extends BaseController {
             'type' => $result ? 'success' : 'warning',
             'data' => $result ? ['新权限创建成功'] : ['权限创建失败'],
         ];
-        return redirect('admin/rbac/permission/create')->with('am-alert', $alert);
+        return redirect('admin/rbac/permission/create')->with('fdd-alert', $alert);
     }
 
     /**
@@ -101,7 +101,7 @@ class PermissionController extends BaseController {
             ];
         }
 
-        return redirect(route('admin.rbac.permission.edit', ['id' => $id]))->with('am-alert', $alert);
+        return redirect(route('admin.rbac.permission.edit', ['id' => $id]))->with('fdd-alert', $alert);
     }
 
     /**

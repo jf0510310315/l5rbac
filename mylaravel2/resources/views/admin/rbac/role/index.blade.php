@@ -18,7 +18,7 @@
                 <div class="am-u-sm-12 am-u-md-6">
                     <div class="am-btn-toolbar">
                         <div class="am-btn-group am-btn-group-xs">
-                            <a type="button" href="{{route('admin.rbac.role.create')}}" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</a>
+                            <a type="button" href="{{route('admin.rbac.role.create')}}" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> 新增</a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
             <div class="g">
                 <div class="u-sm-12">
                     <form class="form-horizontal">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-hover">
                             <thead>
                             <tr>
                                 <th class="table-check">
